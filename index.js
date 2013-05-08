@@ -59,9 +59,12 @@ methods.forEach(function(method){
         else {
           path = this._ns.join('/').replace(/\/\//g, '/').replace(/\/$/, '') || '/';
         }
+        orig.call(self, path, args);
+        /*
         args.forEach(function(fn){
           orig.call(self, path, fn);
         });
+        */
       });
 
       return this;
